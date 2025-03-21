@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOUL://RE Controls Guide - Complete Key Bindings & Combat Controls</title>
+    <meta name="description" content="Master GHOUL://RE with our complete controls guide. Learn all keyboard shortcuts, combat moves, and mobile controls to dominate in PvP and PvE.">
+    <meta name="keywords" content="ghoul re controls, ghoul re keyboard controls, ghoul re mobile controls, ghoul re combat controls, ghoul re key bindings">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --blood-red: #c41e3a;
+            --kagune-purple: #6a1b9a;
+            --ccg-blue: #1565c0;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('images/controls-banner.jpg');
+            background-size: cover;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--ccg-blue);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(21, 101, 192, 0.7);
+        }
+
+        .controls-section {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .control-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid var(--ccg-blue);
+        }
+
+        .key-binding {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .key {
+            background: rgba(21, 101, 192, 0.2);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            border: 1px solid var(--ccg-blue);
+        }
+
+        .combo-move {
+            background: rgba(106, 27, 154, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .combo-keys {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .combo-keys .key {
+            font-size: 0.9em;
+        }
+
+        .plus {
+            color: var(--ccg-blue);
+            font-weight: bold;
+        }
+
+        .mobile-controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .mobile-layout {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .pro-tip {
+            background: rgba(46, 125, 50, 0.1);
+            border-left: 4px solid #2e7d32;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .video-tutorial {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+
+        .video-tutorial iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">GHOUL://RE Guide</a>
+            <div class="nav-links">
+                <a href="tier-list.html" class="nav-link">Tier List</a>
+                <a href="controls.html" class="nav-link active">Controls</a>
+                <a href="skill-tree.html" class="nav-link">Skill Tree</a>
+                <a href="clans.html" class="nav-link">Clans</a>
+                <a href="ghoul-points.html" class="nav-link">GP Guide</a>
+                <a href="trello.html" class="nav-link">Trello</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>GHOUL://RE Controls Guide</h1>
+        <p>Master every move with our complete controls reference</p>
+        <div class="last-updated">Last Updated: March 21, 2025</div>
+    </div>
+
+    <div class="container">
+        <div class="controls-section">
+            <h2>Basic Controls</h2>
+            <div class="controls-grid">
+                <div class="control-card">
+                    <h3>Movement Controls</h3>
+                    <div class="key-binding">
+                        <span>Move Forward</span>
+                        <span class="key">W</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Move Left</span>
+                        <span class="key">A</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Move Back</span>
+                        <span class="key">S</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Move Right</span>
+                        <span class="key">D</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Sprint</span>
+                        <span class="key">Shift</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Jump</span>
+                        <span class="key">Space</span>
+                    </div>
+                </div>
+
+                <div class="control-card">
+                    <h3>Combat Controls</h3>
+                    <div class="key-binding">
+                        <span>Light Attack</span>
+                        <span class="key">LMB</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Heavy Attack</span>
+                        <span class="key">RMB</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Block</span>
+                        <span class="key">F</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Dodge</span>
+                        <span class="key">Space</span>
+                    </div>
+                    <div class="key-binding">
+                        <span>Toggle Kagune/Quinque</span>
+                        <span class="key">Q</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <h2>Advanced Combat Moves</h2>
+            <div class="combo-move">
+                <h3>Quick Burst Attack</h3>
+                <div class="combo-keys">
+                    <span class="key">Shift</span>
+                    <span class="plus">+</span>
+                    <span class="key">Space</span>
+                    <span class="plus">+</span>
+                    <span class="key">LMB</span>
+                </div>
+                <p>Perfect for initiating combat or escaping dangerous situations.</p>
+            </div>
+
+            <div class="combo-move">
+                <h3>Counter Strike</h3>
+                <div class="combo-keys">
+                    <span class="key">F</span>
+                    <span class="plus">+</span>
+                    <span class="key">RMB</span>
+                </div>
+                <p>Block an attack and immediately counter with a powerful strike.</p>
+            </div>
+
+            <div class="combo-move">
+                <h3>Aerial Combo</h3>
+                <div class="combo-keys">
+                    <span class="key">Space</span>
+                    <span class="plus">+</span>
+                    <span class="key">LMB</span>
+                    <span class="plus">+</span>
+                    <span class="key">LMB</span>
+                    <span class="plus">+</span>
+                    <span class="key">RMB</span>
+                </div>
+                <p>Launch opponents into the air and deal massive damage.</p>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <h2>Mobile Controls</h2>
+            <div class="mobile-controls">
+                <img src="images/mobile-layout.jpg" alt="Mobile Control Layout" class="mobile-layout">
+                <p>Mobile controls can be customized in the settings menu. Drag buttons to your preferred positions.</p>
+            </div>
+
+            <div class="pro-tip">
+                <h3>Mobile Pro Tips:</h3>
+                <ul>
+                    <li>Increase button opacity for better visibility</li>
+                    <li>Adjust button sizes based on your device screen</li>
+                    <li>Enable auto-sprint for easier movement</li>
+                    <li>Use the "Quick Cast" option for faster ability activation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <h2>Video Tutorial</h2>
+            <div class="video-tutorial">
+                <iframe src="https://www.youtube.com/embed/rTpfhKjWqwo" 
+                        frameborder="0" 
+                        allowfullscreen></iframe>
+            </div>
+            <p>Watch our detailed video guide to master advanced combat techniques and controls.</p>
+        </div>
+
+        <div class="controls-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Can I customize controls?</h3>
+                <p>Yes! Open Settings (ESC) → Controls → Key Bindings to customize your controls.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's the best control setup for PvP?</h3>
+                <p>Many pro players bind abilities to side mouse buttons and use Q/E for dodging.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I enable auto-sprint?</h3>
+                <p>Go to Settings → Gameplay → Toggle "Auto Sprint" option.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>GHOUL://RE Ultimate Guide © 2025 | Not affiliated with Roblox or game developers</p>
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="tier-list.html" class="footer-link">Tier List</a>
+            <a href="controls.html" class="footer-link active">Controls</a>
+            <a href="skill-tree.html" class="footer-link">Skill Tree</a>
+            <a href="clans.html" class="footer-link">Clans</a>
+            <a href="ghoul-points.html" class="footer-link">GP Guide</a>
+            <a href="trello.html" class="footer-link">Trello</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+        </div>
+    </footer>
+</body>
+</html> 

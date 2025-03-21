@@ -1,0 +1,116 @@
+:root {
+    --blood-red: #c41e3a;
+    --kagune-purple: #6a1b9a;
+    --ccg-blue: #1565c0;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --text-color: #e0e0e0;
+    --success-green: #2e7d32;
+    --trello-blue: #0079BF;
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation Styles */
+.nav-bar {
+    background: var(--card-bg);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.nav-link.active {
+    background: var(--kagune-purple);
+    color: white;
+}
+
+/* Common Section Styles */
+.section {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--card-bg);
+    margin-top: 40px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.footer-link {
+    color: var(--kagune-purple);
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+} 

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOUL://RE Ultimate Guide - Codes, Strategies, Updates & Community</title>
+    <meta name="description" content="The #1 resource for GHOUL://RE Roblox game. Get latest codes, kagune guides, CCG strategies, tier lists, and join our community!">
+    <meta name="keywords" content="ghoul re, ghoul re codes, ghoul re trello, ghoul re wiki, ghoul re guide, ghoul re roblox, tokyo ghoul roblox, ghoul re tier list, ghoul re controls, ghoul re kagunes, ghoul re skill tree, ghoul re clans, ghoul re kakuja fragment, how to get ghoul points in ghoul re">
+    <!-- Open Graph tags for better social sharing -->
+    <meta property="og:title" content="GHOUL://RE Ultimate Guide">
+    <meta property="og:description" content="Get all GHOUL://RE codes, kagune guides, CCG strategies and join our community!">
+    <meta property="og:image" content="https://example.com/ghoul-thumbnail.jpg">
+    <meta property="og:url" content="https://your-website.com">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --blood-red: #c41e3a;
+            --kagune-purple: #6a1b9a;
+            --ccg-blue: #1565c0;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-color: #e0e0e0;
+            --accent-green: #2e7d32;
+        }
+        body {
+            background: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://example.com/ghoul-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 3px solid var(--blood-red);
+        }
+        .hero-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(196, 30, 58, 0.7);
+        }
+        .play-btn {
+            background: var(--blood-red);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(196, 30, 58, 0.4);
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .code-section {
+            border-left: 4px solid var(--ccg-blue);
+        }
+        .kagune-section {
+            border-left: 4px solid var(--kagune-purple);
+        }
+        .strategy-section {
+            border-left: 4px solid var(--accent-green);
+        }
+        .discord-widget {
+            background: #2f3136;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #7289da;
+        }
+        .code-item {
+            background: rgba(21, 101, 192, 0.1);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .copy-btn {
+            background: var(--ccg-blue);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .copy-btn:hover {
+            background: #0d47a1;
+        }
+        .tier-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .tier-item {
+            background: rgba(106, 27, 154, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .tier-s {
+            border-left: 3px solid gold;
+        }
+        .tier-a {
+            border-left: 3px solid silver;
+        }
+        .tier-b {
+            border-left: 3px solid #cd7f32;
+        }
+        .nav-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .nav-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+        .nav-tab.active {
+            border-bottom: 3px solid var(--blood-red);
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+        }
+        .faq-answer {
+            padding: 10px;
+            display: none;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-section h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">GHOUL://RE Guide</a>
+            <div class="nav-links">
+                <a href="tier-list.html" class="nav-link">Tier List</a>
+                <a href="controls.html" class="nav-link">Controls</a>
+                <a href="skill-tree.html" class="nav-link">Skill Tree</a>
+                <a href="clans.html" class="nav-link">Clans</a>
+                <a href="ghoul-points.html" class="nav-link">GP Guide</a>
+                <a href="trello.html" class="nav-link">Trello</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <h1>🩸 GHOUL://RE Ultimate Guide</h1>
+        <p>The #1 resource for codes, strategies, and community for the popular Roblox game</p>
+        <a href="https://www.roblox.com/games/72368345999613/RELEASE-GHOUL-RE" 
+           class="play-btn" 
+           target="_blank">PLAY NOW</a>
+        <p>Requires Roblox client ▶ <a href="https://www.roblox.com/download" style="color: var(--ccg-blue);">Download Guide</a></p>
+    </div>
+
+    <div class="container">
+        <div class="grid-container">
+            <!-- Main Content Area -->
+            <div>
+                <div class="nav-tabs">
+                    <div class="nav-tab active" onclick="switchTab('codes')">Codes</div>
+                    <div class="nav-tab" onclick="switchTab('kagune')">Kagune Guide</div>
+                    <div class="nav-tab" onclick="switchTab('ccg')">CCG Guide</div>
+                    <div class="nav-tab" onclick="switchTab('controls')">Controls</div>
+                    <div class="nav-tab" onclick="switchTab('faq')">FAQ</div>
+                </div>
+
+                <!-- Codes Tab -->
+                <div id="codes-tab" class="tab-content active">
+                    <section class="card code-section">
+                        <h2>🎁 Latest GHOUL://RE Codes (Updated March 2025)</h2>
+                        <div class="code-item">
+                            <span><b>TYFOR20k</b> - Starter Pack with RC Cells and Yen</span>
+                            <button class="copy-btn" onclick="copyCode('TYFOR20k')">Copy</button>
+                        </div>
+                        <div class="code-item">
+                            <span><b>RELEASE2025</b> - 5,000 RC Cells</span>
+                            <button class="copy-btn" onclick="copyCode('RELEASE2025')">Copy</button>
+                        </div>
+                        <div class="code-item">
+                            <span><b>GHOULSEASON1</b> - Special Mask and 2,500 Yen</span>
+                            <button class="copy-btn" onclick="copyCode('GHOULSEASON1')">Copy</button>
+                        </div>
+                        <div class="code-item">
+                            <span><b>SORRYFORBUGS</b> - 10 Spins and Stat Reset</span>
+                            <button class="copy-btn" onclick="copyCode('SORRYFORBUGS')">Copy</button>
+                        </div>
+                        <p>How to redeem: Open the game menu (M key) → Click "Codes" → Enter code → Click "Redeem"</p>
+                    </section>
+
+                    <section class="card">
+                        <h2>📊 Game Updates & News</h2>
+                        <div class="update-item">
+                            <h3>March 18, 2025 - Season 1 Launch</h3>
+                            <ul>
+                                <li>New Kagune types added: Rinkaku and Bikaku</li>
+                                <li>Ward 20 map expansion with underground tunnels</li>
+                                <li>Balance changes to CCG weapons</li>
+                                <li>New boss: The Owl (appears every 3 hours)</li>
+                            </ul>
+                        </div>
+                        <div class="update-item">
+                            <h3>February 25, 2025 - Pre-Season Patch</h3>
+                            <ul>
+                                <li>Fixed server crash issues</li>
+                                <li>Improved combat mechanics</li>
+                                <li>Added training areas in Ward 11</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Kagune Guide Tab -->
+                <div id="kagune-tab" class="tab-content">
+                    <section class="card kagune-section">
+                        <h2>🔴 Kagune Types & Tier List</h2>
+                        <p>Choose your Ghoul path wisely - each Kagune type offers unique abilities and playstyles.</p>
+                        
+                        <h3>Kagune Tier List (PvP)</h3>
+                        <div class="tier-list">
+                            <div class="tier-item tier-s">
+                                <h4>S Tier</h4>
+                                <p>Ukaku (Red)</p>
+                                <p>Rinkaku (Purple)</p>
+                            </div>
+                            <div class="tier-item tier-a">
+                                <h4>A Tier</h4>
+                                <p>Koukaku (Blue)</p>
+                                <p>Bikaku (Green)</p>
+                            </div>
+                            <div class="tier-item tier-b">
+                                <h4>B Tier</h4>
+                                <p>Chimera (Mixed)</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Kagune Abilities</h3>
+                        <ul>
+                            <li><b>Ukaku (Red)</b> - High mobility, ranged attacks, lower defense</li>
+                            <li><b>Koukaku (Blue)</b> - High defense, shield abilities, lower speed</li>
+                            <li><b>Rinkaku (Purple)</b> - High damage, regeneration, multiple tentacles</li>
+                            <li><b>Bikaku (Green)</b> - Balanced stats, tail attacks, poison abilities</li>
+                            <li><b>Chimera (Mixed)</b> - Combines multiple types, requires special unlock</li>
+                        </ul>
+                        
+                        <h3>Best Farming Locations</h3>
+                        <ul>
+                            <li>Ward 11 Underground - Best for RC Cells (Level 50+)</li>
+                            <li>CCG Headquarters Perimeter - Best for Yen (Level 30+)</li>
+                            <li>Ward 20 Rooftops - Best for XP grinding (Level 20+)</li>
+                        </ul>
+                    </section>
+
+                    <section class="card">
+                        <h3>Kakuja System</h3>
+                        <p>Evolve your Kagune to its ultimate form with the Kakuja transformation.</p>
+                        <div class="kakuja-info">
+                            <div class="kakuja-image">
+                                <img src="images/kakuja.jpg" alt="Kakuja Transformation">
+                            </div>
+                            <div class="kakuja-text">
+                                <h4>How to Get Kakuja Fragments:</h4>
+                                <ul>
+                                    <li>Defeat boss Ghouls (5-15% drop chance)</li>
+                                    <li>Complete weekly Kakuja Hunt events</li>
+                                    <li>Purchase from RC Shop (25,000 RC Cells)</li>
+                                </ul>
+                                <a href="kakuja-guide.html" class="read-more">Full Kakuja Guide →</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- CCG Guide Tab -->
+                <div id="ccg-tab" class="tab-content">
+                    <section class="card strategy-section">
+                        <h2>⚔️ CCG Investigator Guide</h2>
+                        <p>Master the art of Ghoul hunting with these CCG strategies and Quinque recommendations.</p>
+                        
+                        <h3>Quinque Weapons Tier List</h3>
+                        <div class="tier-list">
+                            <div class="tier-item tier-s">
+                                <h4>S Tier</h4>
+                                <p>Arata Armor</p>
+                                <p>IXA Shield</p>
+                            </div>
+                            <div class="tier-item tier-a">
+                                <h4>A Tier</h4>
+                                <p>Yukimura</p>
+                                <p>T-Human</p>
+                            </div>
+                            <div class="tier-item tier-b">
+                                <h4>B Tier</h4>
+                                <p>Doujima</p>
+                                <p>Scorpion</p>
+                            </div>
+                        </div>
+                        
+                        <h3>CCG Rank Progression</h3>
+                        <ol>
+                            <li>Rank 3 Investigator (Starting Rank)</li>
+                            <li>Rank 2 Investigator (Level 15)</li>
+                            <li>Rank 1 Investigator (Level 30)</li>
+                            <li>First Class Investigator (Level 50)</li>
+                            <li>Associate Special Class (Level 75)</li>
+                            <li>Special Class Investigator (Level 100)</li>
+                        </ol>
+                        
+                        <h3>Best CCG Training Methods</h3>
+                        <ul>
+                            <li>Partner with other CCG members for 25% XP boost</li>
+                            <li>Complete daily missions from CCG Headquarters</li>
+                            <li>Hunt in Ward 14 for best Quinque material drops</li>
+                            <li>Join Ghoul Suppression Operations (every 6 hours)</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Controls Tab -->
+                <div id="controls-tab" class="tab-content">
+                    <section class="card">
+                        <h2>🎮 GHOUL://RE Controls Guide</h2>
+                        <div class="controls-grid">
+                            <div class="controls-column">
+                                <h3>Basic Controls</h3>
+                                <ul>
+                                    <li><strong>W, A, S, D</strong> - Movement</li>
+                                    <li><strong>Space</strong> - Jump</li>
+                                    <li><strong>Shift</strong> - Sprint</li>
+                                    <li><strong>E</strong> - Interact</li>
+                                    <li><strong>Q</strong> - Toggle Kagune/Quinque</li>
+                                </ul>
+                            </div>
+                            <div class="controls-column">
+                                <h3>Combat Controls</h3>
+                                <ul>
+                                    <li><strong>Left Click</strong> - Light Attack</li>
+                                    <li><strong>Right Click</strong> - Heavy Attack</li>
+                                    <li><strong>1-5</strong> - Ability Slots</li>
+                                    <li><strong>F</strong> - Block</li>
+                                    <li><strong>R</strong> - Special Ability</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="controls.html" class="read-more">View Complete Controls Guide →</a>
+                    </section>
+                </div>
+
+                <!-- FAQ Tab -->
+                <div id="faq-tab" class="tab-content">
+                    <section class="card">
+                        <h2>❓ Frequently Asked Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                How do I change from Ghoul to CCG or vice versa?
+                            </div>
+                            <div class="faq-answer">
+                                Visit Dr. Kanou in Ward 11 Hospital. It costs 10,000 Yen to switch factions. Note that you'll lose all your current abilities and need to start progression from the beginning in your new faction.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                What's the fastest way to get RC Cells?
+                            </div>
+                            <div class="faq-answer">
+                                The fastest way to farm RC Cells is by hunting in Ward 20 Underground. Focus on defeating NPCs with red auras as they drop more RC Cells. Also, complete daily missions which reward 500-1000 RC Cells each.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                How do I get a rare Kagune?
+                            </div>
+                            <div class="faq-answer">
+                                Rare Kagunes have a 5% chance when using the Kagune Spin item (costs 2,500 RC Cells). For guaranteed rare Kagunes, collect 10 Kagune Fragments from defeating boss Ghouls and craft them at the Underground Doctor.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                When do bosses spawn in the game?
+                            </div>
+                            <div class="faq-answer">
+                                Boss spawns follow this schedule:<br>
+                                - The Owl: Every 3 hours (XX:00, XX:03, etc.)<br>
+                                - Jason: Every 2 hours (XX:30, XX:30, etc.)<br>
+                                - Arima (CCG): Every 4 hours (XX:15, XX:15, etc.)<br>
+                                Boss locations are marked on the map with a red skull icon.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                How does the mask system work?
+                            </div>
+                            <div class="faq-answer">
+                                Masks are cosmetic items that also provide stat bonuses. Basic masks give +5% to one stat, while rare masks can give up to +15% to multiple stats. Masks can be obtained from the Mask Shop in Ward 14, from special events, or as drops from boss Ghouls.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div>
+                <div class="discord-widget card">
+                    <h3>🎮 Join Official Discord</h3>
+                    <p>Get early access to updates, participate in events, and connect with other players!</p>
+                    <a href="https://discord.gg/ghoul-re-official" 
+                       target="_blank"
+                       style="color: #7289da; display: block; text-align: center; padding: 10px; background: #202225; border-radius: 5px; margin-top: 15px; text-decoration: none;">
+                       Join Discord Server
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>📹 Latest Videos & Guides</h3>
+                    <div class="video-container">
+                        <iframe width="100%" 
+                                src="https://www.youtube.com/embed/rTpfhKjWqwo" 
+                                frameborder="0" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <h4 style="margin-top: 15px;">More Tutorials:</h4>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=USpGcESIzNk" target="_blank" style="color: var(--kagune-purple);">Beginner's Guide to GHOUL://RE</a></li>
+                        <li><a href="#" style="color: var(--kagune-purple);">How to Get SSS Rank Kagune</a></li>
+                        <li><a href="#" style="color: var(--kagune-purple);">Best PvP Strategies 2025</a></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🗺️ Official Resources</h3>
+                    <ul>
+                        <li><a href="https://www.destructoid.com/ghoul-re-trello-board/" target="_blank" style="color: var(--ccg-blue);">Official Trello Board</a></li>
+                        <li><a href="https://www.destructoid.com/ghoul-re-codes/" target="_blank" style="color: var(--ccg-blue);">Official Code List</a></li>
+                        <li><a href="https://www.escapistmagazine.com/ghoul-re-codes/" target="_blank" style="color: var(--ccg-blue);">Game Updates & Patch Notes</a></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📈 Server Status</h3>
+                    <div style="padding: 10px; background: rgba(46, 125, 50, 0.1); border-radius: 5px; text-align: center;">
+                        <span style="color: #2e7d32; font-weight: bold;">● ONLINE</span>
+                        <p>All servers operational</p>
+                        <p>Last updated: <span id="status-time">Loading...</span></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📚 Essential Guides</h3>
+                    <div class="nav-links">
+                        <a href="tier-list.html" class="nav-link">Tier List</a>
+                        <a href="controls.html" class="nav-link">Controls</a>
+                        <a href="skill-tree.html" class="nav-link">Skill Tree</a>
+                        <a href="clans.html" class="nav-link">Clans</a>
+                        <a href="ghoul-points.html" class="nav-link">GP Guide</a>
+                        <a href="trello.html" class="nav-link">Trello</a>
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>GHOUL://RE Ultimate Guide © 2025 | Not affiliated with Roblox or game developers</p>
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="tier-list.html" class="footer-link">Tier List</a>
+            <a href="controls.html" class="footer-link">Controls</a>
+            <a href="skill-tree.html" class="footer-link">Skill Tree</a>
+            <a href="clans.html" class="footer-link">Clans</a>
+            <a href="ghoul-points.html" class="footer-link">GP Guide</a>
+            <a href="trello.html" class="footer-link">Trello</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+        </div>
+    </footer>
+
+    <script>
+        // Copy code function
+        function copyCode(code) {
+            navigator.clipboard.writeText(code);
+            alert('Code copied: ' + code);
+        }
+        
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Deactivate all tab buttons
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            
+            // Activate selected tab button
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                if (tab.textContent.toLowerCase().includes(tabName)) {
+                    tab.classList.add('active');
+                }
+            });
+        }
+        
+        // Toggle FAQ answers
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        }
+        
+        // Update status time
+        document.getElementById('status-time').textContent = new Date().toLocaleTimeString();
+        
+        // Update status every minute
+        setInterval(() => {
+            document.getElementById('status-time').textContent = new Date().toLocaleTimeString();
+        }, 60000);
+    </script>
+</body>
+</html>

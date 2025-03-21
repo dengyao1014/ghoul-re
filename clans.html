@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOUL://RE Clans Guide - Rankings, Benefits & How to Join</title>
+    <meta name="description" content="Complete GHOUL://RE clans guide. Find top ranked clans, learn how to create or join a clan, clan benefits, and territory control strategies.">
+    <meta name="keywords" content="ghoul re clans, ghoul re top clans, how to join clan ghoul re, ghoul re clan rankings, ghoul re clan wars">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --blood-red: #c41e3a;
+            --kagune-purple: #6a1b9a;
+            --ccg-blue: #1565c0;    
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('images/clans-banner.jpg');
+            background-size: cover;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--blood-red);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(196, 30, 58, 0.7);
+        }
+
+        .clan-section {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .clan-rankings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .clan-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .clan-rank {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--blood-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 8px 0 8px;
+        }
+
+        .clan-info {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .clan-emblem {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .clan-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--blood-red);
+        }
+
+        .territory-map {
+            width: 100%;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .territory-zone {
+            position: absolute;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .territory-zone:hover {
+            background: rgba(196, 30, 58, 0.2);
+        }
+
+        .clan-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .benefit-card {
+            background: rgba(106, 27, 154, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--kagune-purple);
+        }
+
+        .clan-requirements {
+            background: rgba(21, 101, 192, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--ccg-blue);
+        }
+
+        .requirement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirement-list li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .requirement-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--ccg-blue);
+        }
+
+        @media (max-width: 768px) {
+            .clan-rankings {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">GHOUL://RE Guide</a>
+            <div class="nav-links">
+                <a href="tier-list.html" class="nav-link">Tier List</a>
+                <a href="controls.html" class="nav-link">Controls</a>
+                <a href="skill-tree.html" class="nav-link">Skill Tree</a>
+                <a href="clans.html" class="nav-link active">Clans</a>
+                <a href="ghoul-points.html" class="nav-link">GP Guide</a>
+                <a href="trello.html" class="nav-link">Trello</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>GHOUL://RE Clans Guide</h1>
+        <p>Join the most powerful clans and dominate the territories</p>
+        <div class="last-updated">Last Updated: March 21, 2025</div>
+    </div>
+
+    <div class="container">
+        <div class="clan-section">
+            <h2>Top Ranked Clans</h2>
+            <div class="clan-rankings">
+                <div class="clan-card">
+                    <div class="clan-rank">#1</div>
+                    <div class="clan-info">
+                        <img src="images/aogiri-emblem.jpg" alt="Aogiri Tree Emblem" class="clan-emblem">
+                        <div>
+                            <h3>Aogiri Tree</h3>
+                            <p>Leader: GhoulKing_X</p>
+                            <p>Members: 150/150</p>
+                        </div>
+                    </div>
+                    <div class="clan-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Territories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">98%</div>
+                            <div class="stat-label">Win Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">A+</div>
+                            <div class="stat-label">Ranking</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">250K</div>
+                            <div class="stat-label">Weekly XP</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More clan cards with similar structure -->
+            </div>
+        </div>
+
+        <div class="clan-section">
+            <h2>Territory Control Map</h2>
+            <div class="territory-map">
+                <!-- Interactive map showing clan territories -->
+                <div class="territory-zone" style="top: 20%; left: 30%;">
+                    Ward 11 - Aogiri Tree
+                </div>
+                <div class="territory-zone" style="top: 40%; left: 50%;">
+                    Ward 14 - CCG Elite
+                </div>
+                <!-- More territory zones -->
+            </div>
+        </div>
+
+        <div class="clan-section">
+            <h2>Clan Benefits</h2>
+            <div class="clan-benefits">
+                <div class="benefit-card">
+                    <h3>XP Boost</h3>
+                    <p>Get 5-15% bonus XP when playing with clan members</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Resource Sharing</h3>
+                    <p>Access clan storage and share resources with members</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Territory Rewards</h3>
+                    <p>Earn special rewards from controlled territories</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Exclusive Missions</h3>
+                    <p>Access clan-only missions and events</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="clan-section">
+            <h2>How to Create a Clan</h2>
+            <div class="clan-requirements">
+                <h3>Requirements:</h3>
+                <ul class="requirement-list">
+                    <li>Reach Level 30 or higher</li>
+                    <li>Have 50,000 Yen</li>
+                    <li>Complete "Path of Leadership" quest</li>
+                    <li>Have at least 5 active friends</li>
+                </ul>
+                <p>Visit the Clan Registrar in Ward 14 to create your clan once you meet all requirements.</p>
+            </div>
+        </div>
+
+        <div class="clan-section">
+            <h2>Clan Wars Guide</h2>
+            <p>Clan Wars occur every weekend. Here's how to participate and win:</p>
+            <div class="clan-benefits">
+                <div class="benefit-card">
+                    <h3>Preparation</h3>
+                    <ul>
+                        <li>Ensure at least 10 active members</li>
+                        <li>Stock up on RC Cells and healing items</li>
+                        <li>Coordinate builds and roles</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <h3>Territory Control</h3>
+                    <ul>
+                        <li>Capture strategic points</li>
+                        <li>Defend territory borders</li>
+                        <li>Set up patrol routes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="clan-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How do I join a clan?</h3>
+                <p>You can either receive an invitation from a clan member or apply directly through the clan's profile page.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What happens if I leave a clan?</h3>
+                <p>You'll lose access to clan benefits and must wait 24 hours before joining another clan.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How are clan rankings calculated?</h3>
+                <p>Rankings are based on territory control, war participation, average member level, and weekly clan XP.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>GHOUL://RE Ultimate Guide © 2025 | Not affiliated with Roblox or game developers</p>
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="tier-list.html" class="footer-link">Tier List</a>
+            <a href="controls.html" class="footer-link">Controls</a>
+            <a href="skill-tree.html" class="footer-link">Skill Tree</a>
+            <a href="clans.html" class="footer-link active">Clans</a>
+            <a href="ghoul-points.html" class="footer-link">GP Guide</a>
+            <a href="trello.html" class="footer-link">Trello</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+        </div>
+    </footer>
+
+    <script>
+        // Add interactivity for territory map
+        document.querySelectorAll('.territory-zone').forEach(zone => {
+            zone.addEventListener('click', () => {
+                // Show territory details
+                alert(`Territory Details:\n${zone.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html> 

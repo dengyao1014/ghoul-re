@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOUL://RE Skill Tree Guide - Best Builds for Ghoul & CCG</title>
+    <meta name="description" content="Complete GHOUL://RE skill tree guide. Learn the best builds for Ghouls and CCG, optimal skill point distribution, and recommended paths for PvP and farming.">
+    <meta name="keywords" content="ghoul re skill tree, ghoul re best build, ghoul re ccg build, ghoul re skill points, ghoul re abilities">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --blood-red: #c41e3a;
+            --kagune-purple: #6a1b9a;
+            --ccg-blue: #1565c0;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('images/skill-tree-banner.jpg');
+            background-size: cover;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--kagune-purple);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(106, 27, 154, 0.7);
+        }
+
+        .skill-section {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .build-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .build-tab {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.05);
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .build-tab.active {
+            background: var(--kagune-purple);
+            color: white;
+        }
+
+        .skill-tree-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-branch {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--kagune-purple);
+        }
+
+        .skill-node {
+            background: rgba(106, 27, 154, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .skill-node::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            width: 2px;
+            height: 10px;
+            background: var(--kagune-purple);
+        }
+
+        .skill-node:first-child::before {
+            display: none;
+        }
+
+        .skill-points {
+            display: inline-block;
+            background: var(--kagune-purple);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+
+        .recommended-path {
+            background: rgba(46, 125, 50, 0.1);
+            border-left: 4px solid #2e7d32;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .skill-calculator {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .points-remaining {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(46, 125, 50, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .skill-level button {
+            background: var(--kagune-purple);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .skill-level button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .skill-tree-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">GHOUL://RE Guide</a>
+            <div class="nav-links">
+                <a href="tier-list.html" class="nav-link">Tier List</a>
+                <a href="controls.html" class="nav-link">Controls</a>
+                <a href="skill-tree.html" class="nav-link active">Skill Tree</a>
+                <a href="clans.html" class="nav-link">Clans</a>
+                <a href="ghoul-points.html" class="nav-link">GP Guide</a>
+                <a href="trello.html" class="nav-link">Trello</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>GHOUL://RE Skill Tree Guide</h1>
+        <p>Master your character with optimal skill builds and progression paths</p>
+        <div class="last-updated">Last Updated: March 21, 2025</div>
+    </div>
+
+    <div class="container">
+        <div class="skill-section">
+            <div class="build-tabs">
+                <button class="build-tab active" onclick="switchBuild('ghoul')">Ghoul Builds</button>
+                <button class="build-tab" onclick="switchBuild('ccg')">CCG Builds</button>
+            </div>
+
+            <div id="ghoul-builds" class="build-content">
+                <h2>Ghoul Skill Tree</h2>
+                <div class="skill-tree-container">
+                    <div class="skill-branch">
+                        <h3>Combat Branch</h3>
+                        <div class="skill-node">
+                            <h4>Kagune Mastery <span class="skill-points">5 points</span></h4>
+                            <p>Increases Kagune damage by 5% per level</p>
+                        </div>
+                        <div class="skill-node">
+                            <h4>Enhanced Regeneration <span class="skill-points">4 points</span></h4>
+                            <p>Improves health regeneration rate</p>
+                        </div>
+                        <div class="skill-node">
+                            <h4>Predator Instincts <span class="skill-points">3 points</span></h4>
+                            <p>Increases critical hit chance</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-branch">
+                        <h3>Survival Branch</h3>
+                        <div class="skill-node">
+                            <h4>RC Cell Control <span class="skill-points">5 points</span></h4>
+                            <p>Reduces RC Cell consumption</p>
+                        </div>
+                        <div class="skill-node">
+                            <h4>Hardened Kagune <span class="skill-points">4 points</span></h4>
+                            <p>Increases defense while Kagune is active</p>
+                        </div>
+                        <div class="skill-node">
+                            <h4>Efficient Hunger <span class="skill-points">3 points</span></h4>
+                            <p>Reduces hunger rate</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-branch">
+                        <h3>Utility Branch</h3>
+                        <div class="skill-node">
+                            <h4>Enhanced Senses <span class="skill-points">4 points</span></h4>
+                            <p>Increases detection range</p>
+                        </div>
+                        <div class="skill-node">
+                            <h4>Swift Movement <span class="skill-points">3 points</span></h4>
+                            <p>Increases movement speed</p>
+                        </div>
+                        <div class="skill-node">
+                            <h4>Kagune Durability <span class="skill-points">3 points</span></h4>
+                            <p>Reduces Kagune damage taken</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommended-path">
+                    <h3>Recommended PvP Build</h3>
+                    <p><strong>Level 1-30:</strong></p>
+                    <ol>
+                        <li>Kagune Mastery (5 points)</li>
+                        <li>Enhanced Regeneration (4 points)</li>
+                        <li>Predator Instincts (3 points)</li>
+                    </ol>
+                    <p><strong>Level 31-50:</strong></p>
+                    <ol>
+                        <li>RC Cell Control (5 points)</li>
+                        <li>Hardened Kagune (4 points)</li>
+                        <li>Swift Movement (3 points)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div id="ccg-builds" class="build-content" style="display: none;">
+                <!-- Similar structure for CCG builds -->
+            </div>
+        </div>
+
+        <div class="skill-section">
+            <h2>Skill Calculator</h2>
+            <div class="skill-calculator">
+                <div class="points-remaining">
+                    Points Remaining: <span id="points">30</span>
+                </div>
+                <div class="skill-level">
+                    <span>Kagune Mastery:</span>
+                    <button onclick="decreaseSkill(this)">-</button>
+                    <span class="level">0</span>
+                    <button onclick="increaseSkill(this)">+</button>
+                    <span class="bonus">Damage: +0%</span>
+                </div>
+                <!-- More skill level controls -->
+            </div>
+        </div>
+
+        <div class="skill-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How do I reset my skill points?</h3>
+                <p>Visit the Skill Master in Ward 11 and pay 5,000 Yen for a skill reset.</p>
+            </div>
+            <div class="faq-item">
+                <h3>When do I get skill points?</h3>
+                <p>You earn 1 skill point every level up, and bonus points from certain achievements.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's the max level for skills?</h3>
+                <p>Most skills can be leveled up to 5, with each level providing increased benefits.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>GHOUL://RE Ultimate Guide © 2025 | Not affiliated with Roblox or game developers</p>
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="tier-list.html" class="footer-link">Tier List</a>
+            <a href="controls.html" class="footer-link">Controls</a>
+            <a href="skill-tree.html" class="footer-link active">Skill Tree</a>
+            <a href="clans.html" class="footer-link">Clans</a>
+            <a href="ghoul-points.html" class="footer-link">GP Guide</a>
+            <a href="trello.html" class="footer-link">Trello</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+        </div>
+    </footer>
+
+    <script>
+        function switchBuild(type) {
+            document.querySelectorAll('.build-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.querySelectorAll('.build-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(type + '-builds').style.display = 'block';
+            document.querySelector(`[onclick="switchBuild('${type}')"]`).classList.add('active');
+        }
+
+        function increaseSkill(button) {
+            const levelSpan = button.previousElementSibling;
+            const points = document.getElementById('points');
+            const currentLevel = parseInt(levelSpan.textContent);
+            const currentPoints = parseInt(points.textContent);
+            
+            if (currentPoints > 0 && currentLevel < 5) {
+                levelSpan.textContent = currentLevel + 1;
+                points.textContent = currentPoints - 1;
+                updateBonus(button.parentElement);
+            }
+        }
+
+        function decreaseSkill(button) {
+            const levelSpan = button.nextElementSibling;
+            const points = document.getElementById('points');
+            const currentLevel = parseInt(levelSpan.textContent);
+            const currentPoints = parseInt(points.textContent);
+            
+            if (currentLevel > 0) {
+                levelSpan.textContent = currentLevel - 1;
+                points.textContent = currentPoints + 1;
+                updateBonus(button.parentElement);
+            }
+        }
+
+        function updateBonus(skillElement) {
+            const level = parseInt(skillElement.querySelector('.level').textContent);
+            const bonusSpan = skillElement.querySelector('.bonus');
+            bonusSpan.textContent = `Damage: +${level * 5}%`;
+        }
+    </script>
+</body>
+</html> 

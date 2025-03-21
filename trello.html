@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOUL://RE Trello Board Guide - Updates, Codes & Development News</title>
+    <meta name="description" content="Complete guide to GHOUL://RE Trello board. Get latest codes, development updates, upcoming features, and patch notes all in one place.">
+    <meta name="keywords" content="ghoul re trello, ro ghoul trello, ghoul re trello board, ghoul re updates, ghoul re development">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --blood-red: #c41e3a;
+            --kagune-purple: #6a1b9a;
+            --ccg-blue: #1565c0;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-color: #e0e0e0;
+            --trello-blue: #0079BF;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('images/trello-banner.jpg');
+            background-size: cover;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--trello-blue);
+        }
+
+        .trello-section {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .update-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid var(--trello-blue);
+        }
+
+        .update-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .update-date {
+            background: var(--trello-blue);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .status-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .status-planned { 
+            background: #ff9800;
+            color: white;
+        }
+
+        .status-development {
+            background: #2196f3;
+            color: white;
+        }
+
+        .status-testing {
+            background: #9c27b0;
+            color: white;
+        }
+
+        .status-released {
+            background: #4caf50;
+            color: white;
+        }
+
+        .trello-embed {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .quick-link {
+            background: rgba(0, 121, 191, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--trello-blue);
+            transition: all 0.3s;
+        }
+
+        .quick-link:hover {
+            background: rgba(0, 121, 191, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--trello-blue);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .timeline-date {
+            width: 120px;
+            padding: 6px 12px;
+            background: var(--trello-blue);
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .timeline-content {
+            width: calc(100% - 150px);
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            border: 10px solid transparent;
+            border-right-color: rgba(255,255,255,0.05);
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-date {
+                margin-bottom: 10px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+
+            .timeline-content::before {
+                left: -20px;
+                border-right-color: rgba(255,255,255,0.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">GHOUL://RE Guide</a>
+            <div class="nav-links">
+                <a href="tier-list.html" class="nav-link">Tier List</a>
+                <a href="controls.html" class="nav-link">Controls</a>
+                <a href="skill-tree.html" class="nav-link">Skill Tree</a>
+                <a href="clans.html" class="nav-link">Clans</a>
+                <a href="ghoul-points.html" class="nav-link">GP Guide</a>
+                <a href="trello.html" class="nav-link active">Trello</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>GHOUL://RE Trello Board Guide</h1>
+        <p>Stay updated with the latest development news, upcoming features, and patch notes</p>
+        <div class="last-updated">Last Updated: March 21, 2025</div>
+    </div>
+
+    <div class="container">
+        <div class="trello-section">
+            <h2>Latest Updates</h2>
+            <div class="update-card">
+                <div class="update-header">
+                    <h3>Version 2.5.0 Update</h3>
+                    <span class="update-date">March 21, 2025</span>
+                </div>
+                <ul>
+                    <li>New Kakuja System</li>
+                    <li>Ward 20 Expansion</li>
+                    <li>Balance Changes</li>
+                </ul>
+            </div>
+            <p class="update-note">
+                * Updates are cached locally and refreshed daily. 
+                For real-time updates, please join our Discord server.
+            </p>
+        </div>
+
+        <div class="trello-section">
+            <h2>Upcoming Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>New Kagune Types</h3>
+                    <p>Three new Kagune variations with unique abilities</p>
+                    <span class="status-tag status-development">In Development</span>
+                </div>
+                <div class="feature-card">
+                    <h3>Clan Wars 2.0</h3>
+                    <p>Enhanced territory control and clan progression system</p>
+                    <span class="status-tag status-testing">Testing</span>
+                </div>
+                <div class="feature-card">
+                    <h3>Mobile Support</h3>
+                    <p>Cross-platform play with mobile devices</p>
+                    <span class="status-tag status-planned">Planned</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="trello-section">
+            <h2>Access Official Trello Board</h2>
+            <div class="alternative-links">
+                <a href="https://discord.gg/ghoul-re" class="quick-link" target="_blank">
+                    <i class="fab fa-discord"></i> Join Discord for Updates
+                </a>
+                <a href="https://twitter.com/ghoulre" class="quick-link" target="_blank">
+                    <i class="fab fa-twitter"></i> Follow on Twitter
+                </a>
+                <a href="https://youtube.com/ghoulre" class="quick-link" target="_blank">
+                    <i class="fab fa-youtube"></i> Watch on YouTube
+                </a>
+            </div>
+            <div class="pro-tip">
+                <h3>Can't access Trello?</h3>
+                <p>Try these alternatives:</p>
+                <ul>
+                    <li>Join our Discord server for real-time updates</li>
+                    <li>Follow our Twitter for quick announcements</li>
+                    <li>Check our YouTube channel for update videos</li>
+                    <li>Use a VPN service to access Trello</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="trello-section">
+            <h2>Quick Links</h2>
+            <div class="quick-links">
+                <a href="#" class="quick-link">
+                    <h3>Bug Reports</h3>
+                    <p>Report issues and track fixes</p>
+                </a>
+                <a href="#" class="quick-link">
+                    <h3>Suggestions</h3>
+                    <p>Submit your ideas for the game</p>
+                </a>
+                <a href="#" class="quick-link">
+                    <h3>Development Blog</h3>
+                    <p>Read detailed dev updates</p>
+                </a>
+                <a href="#" class="quick-link">
+                    <h3>Community Polls</h3>
+                    <p>Vote on upcoming features</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="trello-section">
+            <h2>Development Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">March 2025</div>
+                    <div class="timeline-content">
+                        <h3>Version 2.5.0</h3>
+                        <ul>
+                            <li>New Kakuja System Implementation</li>
+                            <li>Ward 20 Expansion Release</li>
+                            <li>Major Balance Changes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2025</div>
+                    <div class="timeline-content">
+                        <h3>Upcoming: Version 2.6.0</h3>
+                        <ul>
+                            <li>New Kagune Types (In Development)</li>
+                            <li>Clan Wars 2.0 (Testing)</li>
+                            <li>Mobile Support (Planned)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="trello-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How often is the Trello board updated?</h3>
+                <p>The Trello board is updated daily with bug fixes and weekly with major development updates.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Where can I find new codes?</h3>
+                <p>New codes are posted in the "Codes" list on the Trello board as soon as they're released.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I report bugs?</h3>
+                <p>Use the "Bug Report" card template on the Trello board or submit through our Discord server.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>GHOUL://RE Ultimate Guide © 2025 | Not affiliated with Roblox or game developers</p>
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="tier-list.html" class="footer-link">Tier List</a>
+            <a href="controls.html" class="footer-link">Controls</a>
+            <a href="skill-tree.html" class="footer-link">Skill Tree</a>
+            <a href="clans.html" class="footer-link">Clans</a>
+            <a href="ghoul-points.html" class="footer-link">GP Guide</a>
+            <a href="trello.html" class="footer-link active">Trello</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+        </div>
+    </footer>
+</body>
+</html> 
